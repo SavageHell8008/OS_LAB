@@ -1,0 +1,37 @@
+Input electricity unit charges and calculate total electricity bill 
+according to the given condition: 
+For first 50 units Rs. 0.50/unit
+For next 100 units Rs. 0.75/unit
+For next 100 units Rs. 1.20/unit
+For unit above 250 Rs. 1.50/unit
+An additional surcharge of 20% is added to the bill.
+
+#!/bin/bash
+
+# Function to calculate the bill amount
+calculate_bill() {
+  units=$1
+  bill=0
+  
+  if [ $units -le 50 ]; then
+    bill=$(echo "scale=2; $units * 0.50" | bc)
+  elif [ $units -le 150 ]; then
+    bill=$(echo "scale=2; 50 * 0.50 + ($units - 50) * 0.75" | bc)
+  elif [ $units -le 250 ]; then
+    bill=$(echo "scale=2; 50 * 0.50 + 100 * 0.75 + ($units - 150) * 1.20" | bc)
+  else
+    bill=$(echo "scale=2; 50 * 0.50 + 100 * 0.75 + 100 * 1.20 + ($units - 250) * 1.50" | bc)
+  fi
+  
+  # Add surcharge of 20%
+  surcharge=$(echo "scale=2; $bill * 0.20" | bc)
+  total_bill=$(echo "scale=2; $bill + $surcharge" | bc)
+  
+  echo "Total electricity bill: Rs. $total_bill"
+}
+
+# Read the input from the user
+read -p "Enter the number of units consumed: " units
+
+# Call the function to calculate the bill
+calculate_bill $units
