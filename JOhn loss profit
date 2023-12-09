@@ -1,0 +1,20 @@
+John bought a toy for Rs. 325 and sold the same for Rs. 458. Explain how we can find if John has made a profit or a loss?
+#!/bin/bash
+
+# Cost price (buying price)
+cost_price=325
+
+# Selling price
+selling_price=458
+
+# Calculate profit or loss
+profit_loss=$((selling_price - cost_price))
+
+# Display the results
+if [ $profit_loss -gt 0 ]; then
+    echo "John made a profit of Rs. $profit_loss."
+elif [ $profit_loss -lt 0 ]; then
+    echo "John incurred a loss of Rs. $((profit_loss * -1))."
+else
+    echo "John neither made a profit nor incurred a loss. The transaction was break-even."
+fi
