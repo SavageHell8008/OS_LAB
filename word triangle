@@ -1,0 +1,24 @@
+Input a word from the user and print it in the following way. 
+For example, if the word is PROGRAM, the program will 
+print it as-
+P
+P R
+P R O
+P R O G
+P R O G R
+P R O G R A
+P R O G R A M
+
+#!/bin/bash
+
+# Read the word from the user
+read -p "Enter a word: " word
+
+# Iterate through each character of the word
+for (( i=1; i<=${#word}; i++ )); do
+  # Extract the substring from the first character to the ith character
+  substring=${word:0:i}
+  
+  # Print the substring
+  echo "$substring"
+done
