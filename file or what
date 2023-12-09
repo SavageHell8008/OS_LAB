@@ -1,0 +1,27 @@
+Input the name of a file as command line argument and display whether it is a file, a directory or anything else. 
+
+#!/bin/bash
+
+# Check if a command-line argument is provided
+if [ $# -eq 0 ]; then
+  echo "Error: Please provide a filename as a command-line argument."
+  exit 1
+fi
+
+# Read the filename from the command-line argument
+filename=$1
+
+# Check if the file exists
+if [ -e "$filename" ]; then
+  # Check if it's a regular file
+  if [ -f "$filename" ]; then
+    echo "$filename is a regular file."
+  # Check if it's a directory
+  elif [ -d "$filename" ]; then
+    echo "$filename is a directory."
+  else
+    echo "$filename is neither a file nor a directory."
+  fi
+else
+  echo "$filename does not exist."
+fi
