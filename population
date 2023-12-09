@@ -1,0 +1,22 @@
+The population of a city is 20000. It increases by 20 % during first year and 30% during the second year. Find the population of the city after two years?
+Ans- #!/bin/bash
+
+# Initial population
+p=20000
+
+# Percentage increase for the first year
+i1=20
+
+# Percentage increase for the second year
+i2=30
+
+# Calculate population after the first year
+p1=$((p + (p * i1 / 100)))
+
+# Calculate population after the second year
+p2=$((p1 + (p1 * i2 / 100)))
+
+# Display the results
+echo "Initial population: $p"
+echo "Population after the first year: $p1"
+echo "Population after two years: $p2"
