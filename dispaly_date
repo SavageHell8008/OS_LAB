@@ -1,0 +1,14 @@
+Display current date in a particular format, number of users currently login and current month’s calendar.
+  #!/bin/bash
+
+# Display current date in the format YYYY-MM-DD
+current_date=$(date +"%Y-%m-%d")
+echo "Current Date: $current_date"
+
+# Display the number of users currently logged in
+logged_in_users=$(who | wc -l)
+echo "Number of Users Currently Logged In: $logged_in_users"
+
+# Display the calendar for the current month
+current_month_calendar=$(cal)
+echo -e "\nCurrent Month's Calendar:\n$current_month_calendar"
