@@ -1,0 +1,23 @@
+Take name as an input and display a greeting message to the user by checking system clock. (Ex :- Hello John Good Morning in morning time else Hello John Good Afternoon in 
+afternoon time else Hello John Good Evening in Evening time)
+#!/bin/bash
+
+# Get the current hour in 24-hour format
+current_hour=$(date +"%H")
+
+# Take user input for name
+read -p "Enter your name: " name
+
+# Function to determine the time of day and display greeting
+greet_user() {
+    if [[ $1 -ge 5 && $1 -lt 12 ]]; then
+        echo "Good Morning, $2!"
+    elif [[ $1 -ge 12 && $1 -lt 18 ]]; then
+        echo "Good Afternoon, $2!"
+    else
+        echo "Good Evening, $2!"
+    fi
+}
+
+# Call the function with current hour and user name
+greet_user $current_hour "$name"
