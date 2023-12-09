@@ -1,0 +1,73 @@
+                 LAB_2
+
+>cp (for copy)
+syntax: cp filename newfilename
+
+>mv(rename or move a file)
+Syntax: mv filename new_filename
+
+>ls(show list)
+
+>mkdir (create dic)
+
+>cd (change directory)
+
+>cat
+
+>man (display the manual ofcommaond)
+
+>date(display current date and time) 
+ UTC :: Coordinated Universal Time
+
+>cal
+>rm (remove file from directory) // rm * (remove all files in single command)
+
+>rmdir(remove directory)
+
+>head(first N )
+
+>tail(last N)
+
+>pwd(print working directory)
+
+____________________________________________________________________
+             LAB 2
+
+>sort (sort filename)
+>cut ; this commond is used for cut the file based on car or byte or field
+>wc : for counting char,lines,words,filename
+>chmod : to give permission to the file
+>grep : to find or serch by char or word
+>uniq
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+vi shell name.sh
+press i to insert from current position of cursor
+press a start instert from after space of cursor potition.
+press o start instert from next line of cursor potion
+
+bash (born again shell)
+command variable
+
+>> q = exite without save
+>> wq = save exit
+>>
